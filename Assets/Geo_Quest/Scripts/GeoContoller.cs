@@ -1,5 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.Runtime.CompilerServices;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -18,11 +21,10 @@ public class GeoContoller : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update() {
+    void Update()
+    {
         float xInput = Input.GetAxis("Horizontal");
         rb2d.velocity = new Vector2(xInput * speed, rb2d.velocity.y);
-        float yInput = Input.GetAxis("Vertical");
-        rb2d.velocity = new Vector2(yInput * speed, rb2d.velocity.x);
     }
 
 
@@ -39,6 +41,11 @@ public class GeoContoller : MonoBehaviour
             case "Finish":
                 {
                     SceneManager.LoadScene(nextLevel);
+                    break;
+                }
+            case "boing":
+                {
+                    rb2d.velocity = new Vector2(rb2d.velocity.x, 9);
                     break;
                 }
         }
