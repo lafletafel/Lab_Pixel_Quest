@@ -12,6 +12,7 @@ TagManager:
   - TalkZone
   - Bullet
   - boing
+  - boingy
   layers:
   - Default
   - TransparentFX
