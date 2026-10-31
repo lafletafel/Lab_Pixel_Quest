@@ -11,22 +11,22 @@ public class GeoContoller : MonoBehaviour
     public string nextLevel = ("Scene_2");
     // Start is called before the first frame update
     private Rigidbody2D rb2d;
+    private SpriteRenderer _spriteRenderer;
     public int speed = 5;
 
+    private void Start() 
+    {
+        rb2d = GetComponent<Rigidbody2D>();
+        _spriteRenderer = GetComponent<SpriteRenderer>();
+        rb2d = GetComponent<Rigidbody2D>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
+    }
     // Color switching
     public Color[] availableColors = new Color[] { Color.red, Color.green, Color.blue };
     private int currentColorIndex = 0;
     private SpriteRenderer spriteRenderer;
 
-    void Start()
-    {
-        rb2d = GetComponent<Rigidbody2D>();
-        spriteRenderer = GetComponent<SpriteRenderer>();
-        if (spriteRenderer != null && availableColors != null && availableColors.Length > 0)
-        {
-            spriteRenderer.color = availableColors[currentColorIndex];
-        }
-    }
+  
 
     // Update is called once per frame
     void Update()
